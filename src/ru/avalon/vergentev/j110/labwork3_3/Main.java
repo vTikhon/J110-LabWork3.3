@@ -10,12 +10,12 @@ public class Main {
         myList1.addToBegin("DDD");
         myList1.addToBegin("EEE");
         myList1.addToBegin("FFF");
-//        myList1.addToBegin("GGG");
-//        myList1.addToBegin("HHH");
-//        myList1.addToBegin("III");
-//        myList1.addToBegin("JJJ");
-//        myList1.addToBegin("KKK");
-//        myList1.addToBegin("LLL");
+        myList1.addToBegin("GGG");
+        myList1.addToBegin("HHH");
+        myList1.addToBegin("III");
+        myList1.addToBegin("JJJ");
+        myList1.addToBegin("KKK");
+        myList1.addToBegin("LLL");
         myList1.print(); //выводим сформированный список
 //        myList1.extractionFromBegin(); //извлечение из начала списка без удаления
 //        System.out.print('\n');

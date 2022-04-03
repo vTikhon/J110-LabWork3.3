@@ -2,7 +2,7 @@ package ru.avalon.vergentev.j110.labwork3_3;
 
 public class Linker {
     public Linker next;
-    public String [] array = new String[5];
+    public String [] array;
 
 
     //Constructors

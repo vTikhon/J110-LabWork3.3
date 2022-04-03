@@ -3,8 +3,8 @@ package ru.avalon.vergentev.j110.labwork3_3;
 public class List {
     private Linker head;
     private Linker tail;
-    String[] array = new String[5];
     int i = 0;
+
 
     //Constructors
     public List() {
@@ -19,20 +19,18 @@ public class List {
 
     //метод добавления элемента в начало списка
     public void addToBegin (String data) {
-        Linker element = new Linker(array);
-//        String[] array = head.array;
+        Linker element = new Linker(new String[5]);
         element.array[i] = data;
         if (isEmpty()) {
             head = element;
             tail = element;
-            System.out.println("isEmpty(),,, i =" + i  + " " + array[i]);
+            System.out.println("isEmpty(),,, i =" + i  + " " + element.array[i]);
             i++;
-        } else if (element.array[array.length - 1] == null) {
-            System.out.println("element.array[array.length - 1] == null,,, i=" + i + " " + array[i]);
-
+        } else if (element.array[element.array.length - 1] == null) {
+            System.out.println("element.array[array.length - 1] == null,,, i=" + i + " " + element.array[i]);
             i++;
         } else {
-            System.out.println("element.array[array.length - 1] != null,,, i=" + i + " " + array[i]);
+            System.out.println("element.array[array.length - 1] != null,,, i=" + i + " " + element.array[i]);
             element.next = head;
             head = element;
             i = 0;
@@ -45,16 +43,13 @@ public class List {
 //        if (isEmpty()) {
 //            head = element;
 //            tail = element;
-//            System.out.println("isEmpty(),,, i =" + i );
 //            i++;
 //        } else if (element.array[array.length - 1] == null) {
 //            i++;
-//            System.out.println("element.array[array.length - 1] == null,,, i=" + i );
 //        } else if (element.array[array.length - 1] != null) {
 //            tail.next = element;
 //            tail = element;
 //            i = 0;
-//            System.out.println("element.array[array.length - 1] != null,,, i=" + i );
 //        }
 //
 //    }
@@ -62,10 +57,9 @@ public class List {
     //метод печатания заданного в main списка с проверкой его пустоты
     public void print () {
         Linker element = head;
-//        String [] array = head.array;
         if (element != null) {
             while (element != null) {
-                for (String i : array) {
+                for (String i : element.array) {
                     System.out.print(i + ", ");
                 }
                 System.out.println('\n');
