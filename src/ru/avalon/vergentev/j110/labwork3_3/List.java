@@ -19,39 +19,52 @@ public class List {
 
     //метод добавления элемента в начало списка
     public void addToBegin (String data) {
-        Linker element = new Linker(new String[5]);
-        element.array[i] = data;
-        if (isEmpty()) {
+        if (i==0 && head == null) {
+            Linker element = new Linker(new String[5]);
+//            for (int j = 0; j < element.array.length; j++) {
+//            element.array[j] = null;
+//            }
+            element.array[i] = data;
             head = element;
             tail = element;
-            System.out.println("isEmpty(),,, i =" + i  + " " + element.array[i]);
             i++;
-        } else if (element.array[element.array.length - 1] == null) {
-            System.out.println("element.array[array.length - 1] == null,,, i=" + i + " " + element.array[i]);
+            System.out.println("111");
+        } else if (i==0 && head != null) {
+            Linker element = new Linker(new String[5]);
+//            for (int j = 0; j < element.array.length; j++) {
+//                element.array[j] = null;
+//            }
+            element.array[i] = data;
             i++;
+            System.out.println("222");
         } else {
-            System.out.println("element.array[array.length - 1] != null,,, i=" + i + " " + element.array[i]);
-            element.next = head;
-            head = element;
-            i = 0;
+            Linker element = head;
+            element.array[i] = data;
+            if (element.array[element.array.length - 1] == null) {
+                i++;
+                System.out.println("333");
+            } else {
+                element.next = head;
+                i = 0;
+                System.out.println("444");
+            }
         }
     }
     //метод добавления элемента в конец списка
 //    public void addToEnd (String data) {
-//        Linker element = new Linker(array);
+//        Linker element = new Linker(new String[5]);
 //        element.array[i] = data;
 //        if (isEmpty()) {
 //            head = element;
 //            tail = element;
 //            i++;
-//        } else if (element.array[array.length - 1] == null) {
+//        } else if (element.array[element.array.length - 1] == null) {
 //            i++;
-//        } else if (element.array[array.length - 1] != null) {
+//        } else if (element.array[element.array.length - 1] != null) {
 //            tail.next = element;
 //            tail = element;
 //            i = 0;
 //        }
-//
 //    }
 
     //метод печатания заданного в main списка с проверкой его пустоты
@@ -59,8 +72,8 @@ public class List {
         Linker element = head;
         if (element != null) {
             while (element != null) {
-                for (String i : element.array) {
-                    System.out.print(i + ", ");
+                for (int j = 0; j < element.array.length; j++) {
+                    System.out.print(element.array[j] + ", ");
                 }
                 System.out.println('\n');
                 element = element.next;
