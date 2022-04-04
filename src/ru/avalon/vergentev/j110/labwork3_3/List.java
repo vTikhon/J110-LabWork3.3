@@ -25,23 +25,19 @@ public class List {
             head = element;
             tail = element;
             i++;
-            System.out.println("111");
         } else if (i==0) {
             Linker element = new Linker(new String[5]);
             element.next = head;
             head = element;
             element.array[i] = data;
             i++;
-            System.out.println("222");
         } else {
             Linker element = head;
             element.array[i] = data;
             if (element.array[element.array.length - 1] == null) {
                 i++;
-                System.out.println("333");
             } else {
                 i = 0;
-                System.out.println("444");
             }
         }
     }
@@ -53,23 +49,19 @@ public class List {
             head = element;
             tail = element;
             i++;
-            System.out.println("111");
         } else if (i==0) {
             Linker element = new Linker(new String[5]);
             tail.next = element;
             tail = element;
             element.array[i] = data;
             i++;
-            System.out.println("222");
         } else {
             Linker element = tail;
             element.array[i] = data;
             if (element.array[element.array.length - 1] == null) {
                 i++;
-                System.out.println("333");
             } else {
                 i = 0;
-                System.out.println("444");
             }
         }
     }
