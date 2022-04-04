@@ -21,19 +21,15 @@ public class List {
     public void addToBegin (String data) {
         if (i==0 && head == null) {
             Linker element = new Linker(new String[5]);
-//            for (int j = 0; j < element.array.length; j++) {
-//            element.array[j] = null;
-//            }
             element.array[i] = data;
             head = element;
             tail = element;
             i++;
             System.out.println("111");
-        } else if (i==0 && head != null) {
+        } else if (i==0) {
             Linker element = new Linker(new String[5]);
-//            for (int j = 0; j < element.array.length; j++) {
-//                element.array[j] = null;
-//            }
+            element.next = head;
+            head = element;
             element.array[i] = data;
             i++;
             System.out.println("222");
@@ -44,28 +40,39 @@ public class List {
                 i++;
                 System.out.println("333");
             } else {
-                element.next = head;
                 i = 0;
                 System.out.println("444");
             }
         }
     }
     //метод добавления элемента в конец списка
-//    public void addToEnd (String data) {
-//        Linker element = new Linker(new String[5]);
-//        element.array[i] = data;
-//        if (isEmpty()) {
-//            head = element;
-//            tail = element;
-//            i++;
-//        } else if (element.array[element.array.length - 1] == null) {
-//            i++;
-//        } else if (element.array[element.array.length - 1] != null) {
-//            tail.next = element;
-//            tail = element;
-//            i = 0;
-//        }
-//    }
+    public void addToEnd (String data) {
+        if (i==0 && head == null) {
+            Linker element = new Linker(new String[5]);
+            element.array[i] = data;
+            head = element;
+            tail = element;
+            i++;
+            System.out.println("111");
+        } else if (i==0) {
+            Linker element = new Linker(new String[5]);
+            tail.next = element;
+            tail = element;
+            element.array[i] = data;
+            i++;
+            System.out.println("222");
+        } else {
+            Linker element = tail;
+            element.array[i] = data;
+            if (element.array[element.array.length - 1] == null) {
+                i++;
+                System.out.println("333");
+            } else {
+                i = 0;
+                System.out.println("444");
+            }
+        }
+    }
 
     //метод печатания заданного в main списка с проверкой его пустоты
     public void print () {

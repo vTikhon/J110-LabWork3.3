@@ -24,20 +24,20 @@ public class Main {
 //        myList1.print(); // выводим оставшийся список на экран
 
         //работа со списком, который формируется с добавлением элементов в конец
-//        List myList2 = new List();
-//        myList2.addToEnd("aaa");
-//        myList2.addToEnd("bbb");
-//        myList2.addToEnd("ccc");
-//        myList2.addToEnd("ddd");
-//        myList2.addToEnd("eee");
-//        myList2.addToEnd("fff");
-//        myList2.addToEnd("ggg");
-//        myList2.addToEnd("hhh");
-//        myList2.addToEnd("iii");
-//        myList2.addToEnd("jjj");
-//        myList2.addToEnd("kkk");
-//        myList2.addToEnd("lll");
-//        myList2.print(); //выводим сформированный список
+        List myList2 = new List();
+        myList2.addToEnd("aaa");
+        myList2.addToEnd("bbb");
+        myList2.addToEnd("ccc");
+        myList2.addToEnd("ddd");
+        myList2.addToEnd("eee");
+        myList2.addToEnd("fff");
+        myList2.addToEnd("ggg");
+        myList2.addToEnd("hhh");
+        myList2.addToEnd("iii");
+        myList2.addToEnd("jjj");
+        myList2.addToEnd("kkk");
+        myList2.addToEnd("lll");
+        myList2.print(); //выводим сформированный список
 //        myList2.extractionFromEnd(); //извлечение из конца списка без удаления
 //        System.out.print('\n');
 //        myList2.print(); // проверка того что удаления не произошло
