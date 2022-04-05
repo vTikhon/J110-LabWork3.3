@@ -29,14 +29,35 @@ public class List {
         } else if (i==0) {
             Linker element = new Linker(new String[5]);
             element.next = head;
+
+            element.array[1] = head.array[0];
+            head.array[0] = null;
+            element.array[2] = head.array[1];
+            head.array[1] = null;
+            element.array[3] = head.array[2];
+            head.array[2] = null;
+            element.array[4] = head.array[3];
+            head.array[3] = null;
+            head.array[0] = head.array[4];
+            head.array[4] = null;
             head = element;
+
             element.array[i] = data;
             System.out.println("begin 222 " + element.array[i]);
             i++;
         } else {
             Linker element = head;
+            if (head != tail) {
+                for (int s = i; s > 0; s--) {
+                    tail.array[s] = tail.array[s-1];
+                }
+                tail.array[0] = element.array[element.array.length-1];
+                for (int s = element.array.length-1; s > i; s--) {
+                    element.array[s] = element.array[s-1];
+                }
+            }
             element.array[i] = data;
-            if (element.array[element.array.length - 1] == null) {
+            if (tail.array[tail.array.length - 1] == null) {
                 System.out.println("begin 333 " + element.array[i]);
                 i++;
             } else {
