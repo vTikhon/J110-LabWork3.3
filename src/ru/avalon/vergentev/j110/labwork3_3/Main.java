@@ -22,13 +22,17 @@ public class Main {
         myList1.addToBegin("DDD");
         myList1.addToBegin("EEE");
         myList1.addToBegin("FFF");
-//        myList1.addToBegin("GGG");
-//        myList1.addToBegin("HHH");
-//        myList1.addToBegin("III");
-//        myList1.addToBegin("JJJ");
-//        myList1.addToBegin("KKK");
-//        myList1.addToBegin("LLL");
+        myList1.addToBegin("GGG");
+        myList1.addToBegin("HHH");
+        myList1.addToBegin("III");
+        myList1.addToBegin("JJJ");
+        myList1.addToBegin("KKK");
+        myList1.addToBegin("LLL");
 //        myList1.addToBegin("MMM");
+//        myList1.addToBegin("OOO");
+//        myList1.addToBegin("PPP");
+//        myList1.addToBegin("QQQ");
+//        myList1.addToBegin("RRR");
         myList1.print(); //выводим сформированный список
 //        myList1.modifyElement("zzz"); //Добавляем к элементам списка GGG
 //        myList1.print(); //выводим модифицированный список

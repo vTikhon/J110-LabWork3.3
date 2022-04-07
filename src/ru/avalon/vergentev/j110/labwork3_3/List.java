@@ -3,6 +3,7 @@ package ru.avalon.vergentev.j110.labwork3_3;
 public class List {
     private Linker head;
     private Linker tail;
+    private Linker headTemp;
     int i = 0;
 
 
@@ -29,17 +30,21 @@ public class List {
         } else if (i==0) {
             Linker element = new Linker(new String[5]);
             element.next = head;
+            headTemp = element;
 
-            element.array[1] = head.array[0];
-            head.array[0] = null;
-            element.array[2] = head.array[1];
-            head.array[1] = null;
-            element.array[3] = head.array[2];
-            head.array[2] = null;
-            element.array[4] = head.array[3];
-            head.array[3] = null;
-            head.array[0] = head.array[4];
-            head.array[4] = null;
+            while (element.next != null) {
+                for (int s = 1; s < element.array.length; s++) {
+                    element.array[s] = element.next.array[s-1];
+                    element.next.array[s-1] = null;
+                }
+                element.next.array[0] = element.next.array[element.array.length-1];
+                element.next.array[element.array.length-1] = null;
+                if (element.next != null) {
+                    element = element.next;
+                }
+            }
+
+            element = headTemp;
             head = element;
 
             element.array[i] = data;
@@ -47,15 +52,34 @@ public class List {
             i++;
         } else {
             Linker element = head;
-            if (head != tail) {
+
+
+            headTemp = element;
+            while (element.next != null) {
                 for (int s = i; s > 0; s--) {
-                    tail.array[s] = tail.array[s-1];
+                    element.next.array[s] = element.next.array[s-1];
                 }
-                tail.array[0] = element.array[element.array.length-1];
+                element.next.array[0] = element.array[element.array.length-1];
                 for (int s = element.array.length-1; s > i; s--) {
                     element.array[s] = element.array[s-1];
                 }
+                if (element.next != null) {
+                    element = element.next;
+                }
             }
+            element = headTemp;
+            head = element;
+
+//            if (element != tail) {
+//                for (int s = i; s > 0; s--) {
+//                    tail.array[s] = tail.array[s-1];
+//                }
+//                tail.array[0] = element.array[element.array.length-1];
+//                for (int s = element.array.length-1; s > i; s--) {
+//                    element.array[s] = element.array[s-1];
+//                }
+//            }
+
             element.array[i] = data;
             if (tail.array[tail.array.length - 1] == null) {
                 System.out.println("begin 333 " + element.array[i]);
